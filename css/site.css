@@ -564,6 +564,14 @@ svg {
   font-size: 12px;
   padding-top: 8px;
 }
+.service-icon {
+  display: block;
+  width: 31px;
+  height: 31px;
+  margin-bottom: 17px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
 .service-row h3 {
   font-size: 30px;
   margin: 0;
