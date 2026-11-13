@@ -57,3 +57,18 @@ Budsjett for seks nye filmer: inntil 150 MB MP4 og 12 MB preview, pluss eventuel
 ## Bevegelse og tilgjengelighet
 
 CSS-overganger, vanlig smooth scroll og IntersectionObserver er nok for dette innholdet. GSAP, Lenis, en egen musepeker og en låst horisontal scroll er valgt bort for å holde mobilnavigasjon og lasting enkel. Ingen innlastingsskjerm blokkerer innholdet. Videoene har kontroller og en kort tekstbeskrivelse. Dialoger kan lukkes med Escape, har navngitte knapper og returnerer fokus til åpneren.
+
+## Kildekontroll 13. november 2026
+
+Dropbox-tilkoblingen er kontrollert mot de faktiske mappene:
+
+- `/NC/Intersport/bilder/` inneholder blant annet `8 jun`, `Norønna`, `3 plagg m maria`, `Beihovd`, `KAVU`, `BANKERS` og `Patagonia`.
+- `/NC/Dronebilder/` finnes.
+- `/NC/Intersport/videoer/` inneholder blant annet `STEREOSKISS.mp4`, `pinneskitur uten logo.mp4`, `KAVU SKJORTE short.mp4` og flere ferdigklippede SoMe-filmer.
+- `/Portifolio/` inneholder `STEREOSKISS.mp4`, `Bolletest 2.mp4` og `Søt video (påsken 26).mp4`.
+
+Bildene og filmene er altså lokalisert i Dropbox, men en Dropbox-fil er **ikke** dermed publisert på nettstedet. Originalfilmene må først eksporteres til nettformat og bildefilene må overføres til `assets/img/`. Ingen originaler skal overskrives eller flyttes i Dropbox.
+
+Den faktiske GitHub-treet ble sammenholdt med `assets/media.json`: 207 poster refererer til 414 bildefilstier (full størrelse og miniatyr, med eventuelle delte stier). **411 av referansene manglet** på kontrolltidspunktet. Testskriptet `tools/check-site.py` er nå utvidet så slike feil stopper publisering, og GitHub Actions kjører kontrollen ved nye commits og pull requests.
+
+**Publiseringsregel:** Alle forventede medier må eksistere, bildegalleriet må virke på mobil, og den korrekte produksjonshostingen må være bekreftet før `main` oppdateres.
