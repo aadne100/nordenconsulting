@@ -12,7 +12,7 @@ Designet bruker fortsatt Syne, DM Sans, mørk bakgrunn og turkis fra den origina
 | --- | --- |
 | Første skjerm | Ett ekte dronefoto. Ingen tung film lastes her. |
 | Forsidens portefølje | Friluftsfoto, to korte produktfilmer, drone, bil og bak kameraet. Filtrering etter type. |
-| Bildearkiv | Alle 207 Dropbox-bilder fordeles i seks serier. Samlingene åpnes ved behov. |
+| Bildearkiv | 12 verifiserte bilder vises nå i sju samlinger. Komplett metadataarkiv for 207 Dropbox-bilder er bevart for senere import. |
 | Bak kameraet | Seks eksisterende bilder av Ådne, arbeid og utstyr fra den gamle siden. |
 | Tjenester | Fire redaksjonelle grupper som samlet dekker alle oppgitte tjenester. |
 
@@ -26,7 +26,7 @@ Designet bruker fortsatt Syne, DM Sans, mørk bakgrunn og turkis fra den origina
 | Bil | 14 |
 | Sum Dropbox-bilder | 207 |
 
-Nære varianter beholdes i arkivet, men gjentas ikke som hovedmotiver på forsiden. Ingen fotografier erstattes med genererte bilder. Kunder og resultater uten bekreftelse er ikke lagt til.
+Originaloversikten er bevart i `docs/full-photo-manifest.json`. Bilder som mangler optimaliserte webfiler vises ikke. Nære varianter kan kurateres ved senere import og trenger ikke gjentas som hovedmotiver. Ingen fotografier erstattes med genererte bilder. Kunder og resultater uten bekreftelse er ikke lagt til.
 
 ## Video
 
