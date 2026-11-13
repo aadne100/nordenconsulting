@@ -37,4 +37,4 @@ Se [medieplanen](docs/media-plan.md). Originaler skal beholdes i Dropbox. Legg b
 
 ## Før publisering
 
-Se [teststatus](docs/verification.md). Gjør en reell Formspree-test og kontroller mottak, sjekk begge filmene på iPhone/Safari og kjør Lighthouse på den endelige versjonen. Godkjenn deretter PR-en. Ikke endre domeneoppsettet.
+Se [teststatus](docs/verification.md). Bekreft mottak av testhenvendelsen som Formspree godtok 12. november, sjekk begge filmene på iPhone/Safari og kjør Lighthouse på den endelige versjonen. Godkjenn deretter PR-en. Ikke endre domeneoppsettet.
