@@ -5,7 +5,10 @@ if [ -z "${STEREO_PREVIEW_URL:-}" ]; then
   echo "Stereo Skis preview source unavailable; keeping fallback poster"
   exit 0
 fi
-curl --fail --silent --show-error --location --max-time 180 "$STEREO_PREVIEW_URL" --output /tmp/stereo-source.mp4
+if ! curl --fail --silent --show-error --location --max-time 120 "$STEREO_PREVIEW_URL" --output /tmp/stereo-source.mp4; then
+  echo "Video source blocked; publishing preview with static fallback"
+  exit 0
+fi
 mkdir -p /tmp/norden-ffmpeg
 cd /tmp/norden-ffmpeg
 npm pack @ffmpeg-installer/linux-x64 --silent >/dev/null
