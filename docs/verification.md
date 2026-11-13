@@ -18,14 +18,23 @@ Oppdatert 13. november 2026. Dette er en testlogg, ikke en påstand om at alt er
 - Én reell testhenvendelse ble sendt 12. november til det eksisterende Formspree-endepunktet. Tjenesten godtok innsendingen, siden viste bekreftelse og tømte feltene. Navn: «Teknisk test av Norden-nettsiden». Emne: «Ny henvendelse fra Norden Consulting». Innholdet var tydelig merket som teknisk test uten bestilling. Mottak i innboksen er ikke bekreftet. Ikke send en ny test bare for å gjenskape dokumentasjonen.
 - De gjenopprettede KAVU- og Rab-filmene ble spilt i Chromium 12. november, både WebM og MP4. MP4-filene er dessuten dekodet helt med ffmpeg uten feil. Begge har H.264/AAC, 1080 × 1920 og faststart. Fem sekunders preview er uten lyd. Rask lukking og bytte mellom filmdialogene er kontrollert.
 
+## Kontroll 13. november, etter bildeopprydding
+
+- Galleriet er redusert til 12 bilder som peker til faktiske filer i GitHub-branchen. Siden har seks tematiske samlinger samt «Bak kameraet».
+- Den opprinnelige metadataoversikten med 207 Dropbox-bilder er bevart i `docs/full-photo-manifest.json` og vises ikke som ødelagte bildehenvisninger.
+- Aktiv `assets/media.json` er filtrert til bilder med begge filvariantene til stede.
+- Tjenestene har nå egne dekorative, tilgjengelighetsskjulte SVG-ikoner.
+- SEO-tittel, meta-beskrivelse og JSON-LD-tjenestekatalog er oppdatert. JSON-LD ble pars-et uten feil.
+- Dette er kode- og referansekontroller, ikke en ny fullstendig nettleser- eller Lighthouse-test.
+
 ## Gjenstår før merge
 
-- Fullføre og kontrollere alle mediefiler i GitHub-branchen. Lenker og størrelser skal kontrolleres mot sluttversjonen.
+- Kjør siste sidetest og kontroller at mediefilene har riktige URL-er. Flere originale bilder og filmer kan importeres senere uten ødelagte referanser.
 - Ådne bekrefter mottak i innboksen av den allerede innsendte testhenvendelsen.
 - Avspilling på en fysisk iPhone/Safari. H.264/AAC, `playsinline` og faststart er valgt for kompatibilitet, men enhetstesten er ikke utført.
 - Lighthouse mobil. Et tidligere forsøk kunne ikke starte Chrome i testmiljøet. Ingen Lighthouse-score, LCP eller 60 fps-måling er derfor oppgitt som bestått.
 - Bekreftet dato for første publisering av filmene før `uploadDate` legges til i VideoObject. Eksportdato er ikke brukt som en oppdiktet publiseringsdato.
-- Ådnes gjennomgang og godkjenning av pull request. DNS, CNAME og main skal forbli uendret frem til godkjent merge.
+- Publisering er autorisert av eier. Bekreft publiseringsløsningen og produksjonsdomener før main endres.
 
 ## Medier som kommer senere
 
