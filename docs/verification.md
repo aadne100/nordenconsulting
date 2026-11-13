@@ -1,6 +1,6 @@
 # Teststatus
 
-Oppdatert 11. november 2026. Dette er en testlogg, ikke en påstand om at alt er publisert.
+Oppdatert 13. november 2026. Dette er en testlogg, ikke en påstand om at alt er publisert.
 
 ## Kontrollert
 
@@ -13,12 +13,15 @@ Oppdatert 11. november 2026. Dette er en testlogg, ikke en påstand om at alt er
 - Innsendingsdata beholder `navn`, `epost`, `bedrift`, `melding`; `email` legges ved for svaradresse. Formspree-endepunktet er bevart.
 - Første skjerm laster ingen av videofilene: videoelementene hadde ingen src og var pauset.
 - Porteføljefilter «Film» viste to prosjekter i tidligere nettlesertest.
-- Begge eksisterende filmer spilte i Chromium før gjenoppretting av mediefilene. En feil med klikkflaten og en feil ved rask gjenåpning av filmdialog er rettet. Sluttkontroll av de gjenopprettede filene gjenstår.
+- En feil med klikkflaten og en feil ved rask gjenåpning av filmdialog er rettet.
+
+- Én reell testhenvendelse ble sendt 12. november til det eksisterende Formspree-endepunktet. Tjenesten godtok innsendingen, siden viste bekreftelse og tømte feltene. Navn: «Teknisk test av Norden-nettsiden». Emne: «Ny henvendelse fra Norden Consulting». Innholdet var tydelig merket som teknisk test uten bestilling. Mottak i innboksen er ikke bekreftet. Ikke send en ny test bare for å gjenskape dokumentasjonen.
+- De gjenopprettede KAVU- og Rab-filmene ble spilt i Chromium 12. november, både WebM og MP4. MP4-filene er dessuten dekodet helt med ffmpeg uten feil. Begge har H.264/AAC, 1080 × 1920 og faststart. Fem sekunders preview er uten lyd. Rask lukking og bytte mellom filmdialogene er kontrollert.
 
 ## Gjenstår før merge
 
 - Fullføre og kontrollere alle mediefiler i GitHub-branchen. Lenker og størrelser skal kontrolleres mot sluttversjonen.
-- Reell Formspree-innsending og bekreftelse på mottatt e-post. De lokale simuleringene bekrefter bare grensesnittet.
+- Ådne bekrefter mottak i innboksen av den allerede innsendte testhenvendelsen.
 - Avspilling på en fysisk iPhone/Safari. H.264/AAC, `playsinline` og faststart er valgt for kompatibilitet, men enhetstesten er ikke utført.
 - Lighthouse mobil. Et tidligere forsøk kunne ikke starte Chrome i testmiljøet. Ingen Lighthouse-score, LCP eller 60 fps-måling er derfor oppgitt som bestått.
 - Bekreftet dato for første publisering av filmene før `uploadDate` legges til i VideoObject. Eksportdato er ikke brukt som en oppdiktet publiseringsdato.
