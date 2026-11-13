@@ -41,6 +41,29 @@ for source,url in refs:
  if target.is_dir():target/='index.html'
  if not target.exists():errors.append(f'Missing: {target.relative_to(ROOT)}');continue
  if u.fragment and target in pages and unquote(u.fragment) not in pages[target].ids:errors.append(f'Missing anchor: {url}')
+# Gallery entries are also image dependencies, not just metadata.
+manifest=ROOT/'assets/media.json'
+if manifest.exists():
+ try:
+  items=json.loads(manifest.read_text(encoding='utf-8'))
+  if not isinstance(items,list):raise ValueError('expected a list')
+  seen=set()
+  for i,item in enumerate(items,1):
+   if not isinstance(item,dict):
+    errors.append(f'Media entry {i}: expected an object');continue
+   for key in ('src','small'):
+    value=item.get(key)
+    if not isinstance(value,str) or not value.startswith('/assets/img/'):
+     errors.append(f'Media entry {i}: invalid {key}');continue
+    if not (ROOT/value.lstrip('/')).is_file():errors.append(f'Missing gallery media: {value}')
+   if item.get('src') in seen:errors.append(f'Duplicate gallery media: {item.get("src")}')
+   seen.add(item.get('src'))
+   if not item.get('alt') or not item.get('group'):errors.append(f'Media entry {i}: missing alt or group')
+  print(f'{len(items)} gallery entries checked')
+ except (ValueError,UnicodeError) as exc:
+  errors.append(f'Invalid assets/media.json: {exc}')
+else:
+ errors.append('Missing assets/media.json')
 for p in ROOT.rglob('*'):
  if p.is_file() and '.git' not in p.parts and p.stat().st_size>=100_000_000:errors.append(f'Oversize: {p.name}')
 errors=sorted(set(errors));print(f'{len(pages)} HTML pages, {len(refs)} references, {len(errors)} errors')
