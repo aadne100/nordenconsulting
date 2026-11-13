@@ -35,6 +35,22 @@ Telefon: 905 27 474. E-post: adne@nordenconsulting.no.
 
 Se [medieplanen](docs/media-plan.md). Originaler skal beholdes i Dropbox. Legg bare nettoptimaliserte versjoner i repoet. Ikke bruk Git LFS eller YouTube-nedlasting. Nye prosjekter skal først få synlige kort når filene faktisk finnes og kan spilles.
 
+
+## Eksporter bildegalleriet fra Dropbox
+
+Originalfilene er lokalisert under `/NC` i Dropbox, blant annet `/NC/Intersport/bilder`, `/NC/Dronebilder`, `/NC/redigert` og `/NC/vikenes m3`.
+
+Importer bildefilene fra en lokalt synkronisert Dropbox-mappe med samme undermapper. Importen bruker `assets/media.json` som fasit, lager begge WebP-størrelsene, bevarer originalene og hopper over ferdige eksportfiler:
+
+```sh
+python3 -m pip install Pillow
+python3 tools/import-gallery.py --source "/sti/til/Dropbox/NC" --dry-run
+python3 tools/import-gallery.py --source "/sti/til/Dropbox/NC" --write
+python3 tools/check-site.py
+```
+
+Hvis kildemappen er ufullstendig, melder skriptet fra om nøyaktig hvilke originaler som mangler. Ikke merge med feil i `check-site.py`. Eksporterte filer legges i eksisterende `assets/img/` og committes til arbeidsgrenen. GitHub Actions-valideringen ligger i `.github/workflows/validate.yml`.
+
 ## Før publisering
 
 Se [teststatus](docs/verification.md). Bekreft mottak av testhenvendelsen som Formspree godtok 12. november, sjekk begge filmene på iPhone/Safari og kjør Lighthouse på den endelige versjonen. Godkjenn deretter PR-en. Ikke endre domeneoppsettet.
