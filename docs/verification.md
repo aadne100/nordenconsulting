@@ -30,3 +30,14 @@ Oppdatert 13. november 2026. Dette er en testlogg, ikke en påstand om at alt er
 ## Medier som kommer senere
 
 Stereo Skis, liggende Rab-reklame, Bolletest, Patagonia påske, Pinneskitur og Madshus ski manglet i den gjennomgåtte leveransen. Siden viser ikke ødelagte kort for disse. Se medieplanen for filstier og videre innlegging.
+
+## Siste kontroll, 13. november 2026
+
+- Tjenesteseksjonen har fire dekorative, tilgjengelighetsnøytrale SVG-ikoner som bruker gjeldende Norden-farge.
+- Forsidens JSON-LD er oppdatert med en tjenestekatalog. Den ble parsret som gyldig JSON etter endringen.
+- `assets/media.json` har 207 bilder med fullversjon og miniatyr. Sammenligning mot GitHub-treet viste 411 manglende referanser. Dette er en **publiseringsblokkering**.
+- `tools/check-site.py` kontrollerer nå også alle manifestbildene, og `.github/workflows/validate.yml` er lagt til for automatiske PR-/push-kontroller.
+- Kildemateriale til foto og flere videoer er funnet i Dropbox; se `docs/media-plan.md`.
+- Vercel-tilgangen viser ikke Norden Consulting som prosjekt. `CNAME` i GitHub er `nordenconsulting.no`, men dette alene bekrefter ikke hvilken hosting som leverer domenet. Publiseringsmålet må derfor bekreftes før release.
+
+**Status:** Ikke klar for merge/publisering. Ingen endringer er gjort i `main`, DNS eller domenet.
